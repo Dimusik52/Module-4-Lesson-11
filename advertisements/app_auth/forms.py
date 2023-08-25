@@ -21,6 +21,6 @@ class Registration(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(Registration, self).__init__(*args, **kwargs)
         for field in self.fields.values():
-            field.error_messages = {'required':'Поле "{fieldname}" обязательно'.format(
+            field.error_messages = {'required':'Поле "{fieldname}" обязательно для заполнения'.format(
                 fieldname=field.label)}
         

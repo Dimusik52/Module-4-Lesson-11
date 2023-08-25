@@ -34,7 +34,9 @@ def register_view(request):
         form = Registration(request.POST)
         if form.is_valid():
             form.save()
-            url = reverse('login')
+            user = authenticate(request, username=request.POST['username'], password=request.POST['password1'])
+            login(request, user)
+            url = reverse('profile')
             return redirect(url)
         else:
             form = Registration(request.POST)
