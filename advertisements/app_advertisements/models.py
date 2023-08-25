@@ -15,7 +15,7 @@ class Advertisement(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User, verbose_name="Пользователь", on_delete=models.CASCADE)
-    image = models.ImageField("Изображение", upload_to="advertisements/")
+    image = models.ImageField("Изображение", upload_to="advertisements/", null=True, blank=True)
 
     class Meta:
         db_table = 'advertisements'

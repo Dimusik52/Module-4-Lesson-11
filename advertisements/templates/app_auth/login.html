@@ -22,7 +22,7 @@
     </li>
     {% if not user.is_authenticated %}
     <li class="nav-item">
-      <a class="nav-link" href="register.html">
+      <a class="nav-link" href="{% url 'register' %}">
         <span style="font-weight: bold;">Регистрация</span>
       </a>
     </li>
@@ -62,7 +62,7 @@
       {% csrf_token %}
       <div class="row mb-3">
         <div class="col">
-          <label class="col-sm-4 col-form-label offset-4">Username</label>
+          <label class="col-sm-4 col-form-label offset-4">Имя пользователя</label>
           <div class="col-sm-4 offset-4 w-25">
             <input name="username" type="text" class="form-control form-control-lg">
           </div>
@@ -70,7 +70,7 @@
       </div>
       <div class="row mb-3">
         <div class="col">
-          <label class="col-sm-4 col-form-label offset-4">Password</label>
+          <label class="col-sm-4 col-form-label offset-4">Пароль</label>
           <div class="col-sm-4 offset-4 w-25">
             <input name="password" type="password" class="form-control form-control-lg">
           </div>
